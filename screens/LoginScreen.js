@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import MainScreen from './MainScreen'
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
     if (username === 'user' && password === 'password') {
-      // Navigate to the app home screen
+      navigation.navigate('MainScreen');
     } else {
       // Show an error message
       alert('Incorrect username or password!');
     }
+  };
+
+  const handleSignup = () => {
+    navigation.navigate('Signup');
   };
 
   return (
@@ -32,6 +37,10 @@ export default function LoginScreen() {
       />
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={handleSignup}>
+        <Text style={styles.signup}>Create Account</Text>
       </TouchableOpacity>
     </View>
   );
@@ -66,5 +75,10 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     fontSize: 16,
+  },
+  signup: {
+    marginTop: 20,
+    color: '#007AFF',
+    
   },
 });
