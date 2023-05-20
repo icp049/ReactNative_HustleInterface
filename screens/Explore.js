@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
 import Cleaner from '../exploreScreens/Cleaner';
 import Snow from '../exploreScreens/Snow';
 import Plumber from '../exploreScreens/Plumber';
@@ -14,6 +14,17 @@ const Explore = () => {
 
   return (
     <View style={styles.container}>
+
+<View style={styles.searchBarContainer}>
+        <TextInput
+          style={styles.searchBar}
+          placeholder="Enter your location"
+          placeholderTextColor="#999"
+        />
+      </View>
+
+
+
       <View style={styles.navbar}>
         <TouchableOpacity
           style={[
@@ -54,12 +65,9 @@ const Explore = () => {
         >
           <Text style={styles.buttonText}>Landscaping</Text>
         </TouchableOpacity>
-
-
-
-
-
       </View>
+
+    
 
       {activePage === 'landscaper' && <Landscaper />}
       {activePage === 'cleaner' && <Cleaner />}
@@ -90,6 +98,20 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  searchBarContainer: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    backgroundColor: '#fff',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd',
+  },
+  searchBar: {
+    height: 40,
+    borderRadius: 20,
+    paddingHorizontal: 10,
+    backgroundColor: '#f5f5f5',
+    fontSize: 16,
   },
 });
 

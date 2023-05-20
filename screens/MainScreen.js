@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { NavigationContainer } from '@react-navigation/native'; 
+ 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -15,7 +15,7 @@ const Stack = createStackNavigator();
 
 const MainScreen = () => {
   return (
-    <NavigationContainer>
+   
       <Tab.Navigator
         screenOptions={({ route }) => ({
           activeTintColor: 'black',
@@ -50,7 +50,7 @@ const MainScreen = () => {
         <Tab.Screen name="Message" component={MessageScreen} />
         <Tab.Screen name="Account" component={AccountScreen} />
       </Tab.Navigator>
-    </NavigationContainer>
+    
   );
 };
 

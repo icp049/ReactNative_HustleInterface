@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import MainScreen from './MainScreen'
+import MainScreen from './MainScreen';
 
 export default function LoginScreen({ navigation }) {
   const [username, setUsername] = useState('');
@@ -78,7 +78,6 @@ const styles = StyleSheet.create({
   },
   signup: {
     marginTop: 20,
-    color: '#007AFF',
-    
+    color: '#007AFF',   
   },
 });
